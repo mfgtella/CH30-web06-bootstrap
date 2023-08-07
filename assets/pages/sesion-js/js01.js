@@ -75,5 +75,20 @@ const myObj = {
 
 console.log(myObj);
 
-
-
+// tipos de datos Object
+const misDatosDePerfil = {
+    name: "Fer",
+    lastName : "Tella",
+    age: 29,
+    fullName : function(){
+        return `Nombre completo Fer : ${this.name} ${this.lastName}`;
+    },
+    fullNameUpper : function(){
+        return `Nombre completo Fer : ${this.name.toUpperCase()} ${this.lastName.toUpperCase()}`;
+}
+}
+console.log( misDatosDePerfil);
+console.table( misDatosDePerfil);
+console.log( misDatosDePerfil.fullName);
+console.log( misDatosDePerfil.fullName());
+console.log(misDatosDePerfil.fullNameUpper());
