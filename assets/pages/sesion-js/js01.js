@@ -92,3 +92,25 @@ console.table( misDatosDePerfil);
 console.log( misDatosDePerfil.fullName);
 console.log( misDatosDePerfil.fullName());
 console.log(misDatosDePerfil.fullNameUpper());
+
+//.........................................
+//conversion explicita de datos (coercion de tipo)
+const horaDescanso = 13;
+console.log("hora de descanso" + horaDescanso + "h.");
+const horaDescansoTxt = String(horaDescanso);
+console.log("hora de descanso" + horaDescansoTxt + "h.");
+
+const colorVerde = 0x008000;
+console.log(`El valor RGB del color verde es: ${colorVerde}`);
+console.log(`El valor RGB del color verde es: ${String(colorVerde)}`);
+console.log(`El valor RGB del color verde es: ${colorVerde.toString()}`);
+console.log(`El valor RGB del color verde es: #${colorVerde.toString(16)}`);
+
+
+// conversion a number 
+const myAgeTxt = "25";
+const sumatoria = 10 + myAgeTxt;
+console.log(`valor de la sumatoria ${sumatoria}`);
+console.log(`valor de la sumatoria ${10 + Number(myAgeTxt)}`);
+console.log(`valor de la sumatoria ${10 + parseInt(myAgeTxt)}`);
+
