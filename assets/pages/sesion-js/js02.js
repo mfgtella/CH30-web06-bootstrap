@@ -123,3 +123,93 @@ const sumatoriaMultiplesNumeros = (a,b,...rest) => {
 }    
 console.log(`sumatoria multiples numeros: ${sumatoriaMultiplesNumeros(2,5)}`);
 console.log(`multiples numeros: ${sumatoriaMultiplesNumeros(2,5,7,8)}`);
+
+
+/* 
+--------- funciones callback -------------
+es una funcion(definida,expresada,arrow,anonima) que se pasa a otra funcion como argumento 
+se pasa en el argumento como referencia (sin parentesis). 
+
+ */
+function saludoALosPokemon(){
+    return "yo te elijo"
+}
+
+function saludoSquirtle(nombre){
+    return "vamo` a calmanos"
+}
+
+function eligiendoPokebola(saludo,nombre){
+     console.log("================================");
+    console.log("hola estas en la liga pokemon");
+    console.log("elige a tu mejor pokemon");
+    console.log(saludo(nombre));
+
+}
+/* eligiendoPokebola(); */
+/* eligiendoPokebola(saludoALosPokemon()); */
+eligiendoPokebola(saludoALosPokemon);
+eligiendoPokebola(saludoSquirtle);
+eligiendoPokebola(function(){return "pika pika chuu"});
+eligiendoPokebola(function(nombre){return "quiiii soy " + nombre},"cubone");
+eligiendoPokebola((nombre) => `quiiiii soy ${nombre}`  , "cubone" );
+
+/*
+  Ejercicio 4
+  Crear un programa que itere sobre dos arreglos;
+  si hay cursos en común, imprimirlos en la consola.
+
+student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+
+  salida: "Cursos en común: Programming, Music"
+*/
+const student1Courses = ["Math", "English", "Programming", "Biology", "Physics", "Music"];
+const student2Courses = ["Geography", "Spanish", "Programming", "Music"];
+
+function cursosEnComun(student1Courses, student2Courses){
+    const commonCourses = [];
+    for (let i = 0; i < student1Courses.length; i++) {
+        for (let j = 0; j < student2Courses.length; j++) {
+            console.log(`${student1Courses[i]} === ${student2Courses[j]} : ${student1Courses[i] === student2Courses[j]}`)
+            if (student1Courses[i] === student1Courses[j]){
+                commonCourses.push(student1Courses[i]);
+            }   
+        }        
+    }
+    return `cursos en comun ${commonCourses}`
+}
+console.log(cursosEnComun(student1Courses,student2Courses));
+
+//--------------- resolviendo con filter e include ---------------------
+
+function getCommonCoursesWithFilter(array1Courses,array2Courses){
+    return array1Courses.filter(course=> array2Courses.includes(course));
+}
+console.log(`comun: ${getCommonCoursesWithFilter(student1Courses,student2Courses)}`);
+
+//---------- resolviendo con filter e include por partes-----------------
+console.log("======================================")
+function includeCourse(course,index){
+    console.log(`Elemento ${course}, indice ${index}`);
+    return student2Courses.includes(course);//evaluacion
+}
+
+function getCoursesWithFilter(array1Courses,array2Courses){
+    const commonCourses = array1Courses.filter(includeCourse );
+    return commonCourses;
+}
+console.log(`comunxpartes: ${getCoursesWithFilter(student1Courses,student2Courses)}`);
+
+
+// -------------- Contar la cantidad de caracteres de una frase ---------------------
+/*
+   "peso pluma pica papas con un pico y una pala con un pico pica papas peso pluma";
+
+   Mostrar la cantidad de letras 'p'.
+
+   recomendacion de metodos: split, filter.
+
+*/
+const cadena = "Peso Pluma pica papas con un pico y una pala con un pico pica papas Peso Pluma";
+console.log(`Cantidad de P: ${cadena.toLowerCase().split( "p").length-1}`);
