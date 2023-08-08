@@ -256,11 +256,15 @@ function factorialRecursivo(numero){
 }
 console.log(`Factorial de numero con recursividad: ${factorialRecursivo(5)}`);
 
-
-
-
-
-
-
-
+/*
+Generar una función recursiva que muestre en consola un saludo
+ donde se indique el número saludo desado
+*/
+console.log("=====================================")
+function saludo1 (numeroSaludo){
+    if (numeroSaludo === 10) {
+        return console.log("Saludo" + numeroSaludo + "");    
+}
+}
+saludo1(10);
 
