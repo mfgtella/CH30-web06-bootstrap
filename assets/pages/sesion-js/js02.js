@@ -211,5 +211,56 @@ console.log(`comunxpartes: ${getCoursesWithFilter(student1Courses,student2Course
    recomendacion de metodos: split, filter.
 
 */
+console.log("===================================================")
 const cadena = "Peso Pluma pica papas con un pico y una pala con un pico pica papas Peso Pluma";
 console.log(`Cantidad de P: ${cadena.toLowerCase().split( "p").length-1}`);
+
+// -------------- Recursividad ---------------------
+/*
+es una funcion que se llama a si misma, durante su ejecucion.
+se utiliza en algoritmos y soluciones que se basan en la division y conquista
+como calculos matematicos, recorrido de estructura de datos y algoritmos de busqueda
+y ordenamiento.
+
+patron:
+    function nombreFuncionRecursiva(parametro){
+        if (condicionParo){
+            return expresion;
+        }
+        else{
+            nombreFuncionRecursiva(nuevoParametro);
+        }
+    }
+*/
+
+//......... calculo del factorial de un numero usando ciclo for ........
+console.log("===============================")
+function factorialCicloFor(numero) {
+    let factorial = 1;
+    for (let i=1; i <=numero; i++){
+        factorial = factorial * i;
+    }
+return factorial;
+    
+}
+console.log(`El factorial de 5 es:${factorialCicloFor(5)}`)
+
+//......... calculo del factorial de un numero usando recursividad ........
+console.log("==================================================")
+function factorialRecursivo(numero){
+    if (numero === 1) {
+       return 1; 
+    } else {
+       return numero * factorialRecursivo(numero -1); 
+    }
+}
+console.log(`Factorial de numero con recursividad: ${factorialRecursivo(5)}`);
+
+
+
+
+
+
+
+
+
