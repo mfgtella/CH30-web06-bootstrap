@@ -194,3 +194,37 @@ if (pagoTarjetaCredito === true) msj= "a realizado el pago";
 else msj = "no se ha realizado"; */
 const msj = pagoTarjetaCredito ? "a realizado el pago" : "no ha realizado el pago"
 console.log(`El usuario ${msj}`);
+
+
+// --------------- mini ejercicio  ----------------------------
+/*
+ Preguntar con prompt la edad del usuario: 20
+ Si es >= 18 indicar en la consola "El usuario es mayor de edad";
+ Si no cumple con la condición "El usuario no es mayor de edad".
+*/
+
+/* const usuario = parseInt(prompt("escribe la edad" , 20)); */
+const usuario = 20;
+console.log(`El usuario${usuario >= 18 ? " es mayor de edad" : " no es mayor de edad"}`);
+
+//......... Cálculo del factorial de un número usando recursividad ...............
+
+/* function factorialConRecursividad( numero ){
+    if ( numero <= 0 ) {
+        return 1;
+    } else {
+        console.log(`${numero} * ${numero-1}`);
+        return numero * factorialConRecursividad( numero -1 );
+    }
+}
+
+console.log(`El factorial recursivo de 5 es: 
+${factorialConRecursividad(5)}`);
+function factorialConRecursividad( numero ){
+
+}
+console.log(`El factorial recursivo de 5 es: ${factorialConRecursividad(5)}`); */
+function factorialCinco(numero) {
+    return numero === 0 ? 1 : numero * factorialCinco(numero - 1)};
+console.log(`el factorial recursivo de 5 es: ${factorialCinco(5)}`);
+
