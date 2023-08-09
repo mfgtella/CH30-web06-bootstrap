@@ -261,10 +261,15 @@ Generar una función recursiva que muestre en consola un saludo
  donde se indique el número saludo desado
 */
 console.log("=====================================")
-function saludo1 (numeroSaludo){
-    if (numeroSaludo === 10) {
-        return console.log("Saludo" + numeroSaludo + "");    
+function saludoRecursivo (numeroSaludo){
+    if (numeroSaludo > 1) {
+        saludoRecursivo(numeroSaludo - 1)
+        console.log(`Saludo ${numeroSaludo}`);    
 }
+    else {
+        console.log(`saludo ${numeroSaludo}`);
+    }
 }
-saludo1(10);
+console.log(`Saludos: ${saludoRecursivo(10)}`);
+
 
