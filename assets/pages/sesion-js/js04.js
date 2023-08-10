@@ -35,6 +35,9 @@ const myPet = "Kraken";
 for (const letra of myPet) {
     console.log(letra);
 }
+
+myPet.split("").forEach(letra => { console.log(letra)})
+
 console.log("======================================")
 
 for (const equipo of personasEnCh30) {
@@ -43,3 +46,99 @@ for (const equipo of personasEnCh30) {
      console.log(persona);   
     }
 }
+console.log("======================================")
+
+//------------------- forEach---------------------
+/*
+metodo que se utiliza para iterar colecciones, arreglos.
+permite ejecutar una funcion por cada elemento del arreglo
+*/
+
+console.table(personasEnCh30);
+function iterarEquipos(equipo, indice, arreglo){
+    console.log(`Indice ${indice} : ${equipo}`)
+    return equipo;
+}
+
+/* personasEnCh30.forEach(iterarEquipos); */
+personasEnCh30.forEach((equipo,indice) => { equipo
+    console.log(`Equipo : ${indice} Integrantes ${equipo}`)
+});
+
+//----------------------- uso de break en ciclos---------------------
+// break no detiene la ejecucion de la iteracion en curso y termina el ciclo.
+
+for(let index= 0; index < 10; index++ ){
+    if (index >= 5) break;
+    console.log(index);
+}
+
+// realiza tablas de multiplicar del 1 al 5 con for tradicional 
+
+for (let i = 1; i <= 5; i++) {
+    for (let j= 1; j <= 10; j++){
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+console.log("==========Uso de break con rompe ciclo ==================")
+
+rompeCiclo:
+for (let i = 1; i <= 5; i++) {
+    for (let j= 1; j <= 10; j++){
+       if (i === 2 && j== 5) break rompeCiclo; 
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+console.log("==========Uso de continue ciclo  ==================")
+
+continuaCiclo:
+for (let i = 1; i <= 5; i++) {
+    for (let j= 1; j <= 10; j++){
+       if (j > 3) continue continuaCiclo; 
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+}
+
+
+//==================== Ciclo While=============================
+/*
+crea un bucle que se ejecuta una sentencia mientras la condicion especificada 
+se cumpla.
+
+sintaxis:
+    while(condicion) sentencia;
+
+    while (condicion){
+        sentencias;
+    }
+*/
+
+let counter = 1;
+
+/* while (confirm("Quieres continuar?")){
+    console.log(`Veces que has continuado: ${counter}`);
+    counter ++;
+} */
+
+//==================== Ciclo Do-While=============================
+/*
+crea un bucle que se ejecuta una sentencia mientras la condicion especificada 
+se cumpla.la evaluacion se realiza despues de ejecutar la sentencia, por lo tanto,
+la sentencia se va a ejecutar por lo menos 1 vez.
+
+sintaxis:
+
+    do{
+        sentencias;
+    } while (condicion);
+*/
+let valor = -2;
+while(valor < 5){
+    console.log(`Valor en While ${valor}`)
+    valor ++;
+}
+valor = 4;
+do{
+    console.log(`Valor en do-while ${valor}`);
+    valor++
+} while (valor < 5);
