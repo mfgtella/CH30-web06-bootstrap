@@ -25,3 +25,21 @@ for (let equipo = 0; equipo < personasEnCh30.length /*filas*/; equipo++) {
         console.log( personasEnCh30[ equipo ][ persona ] );        
     }    
 }
+
+//--------- uso de for.... of------------------------
+// ejecuta una sentencia por cada elemento de un objeto iterable(array,coleccio,string)
+console.table(personasEnCh30);
+console.log("======================================")
+
+const myPet = "Kraken";
+for (const letra of myPet) {
+    console.log(letra);
+}
+console.log("======================================")
+
+for (const equipo of personasEnCh30) {
+    console.log(equipo);
+    for (const persona of equipo) {
+     console.log(persona);   
+    }
+}
