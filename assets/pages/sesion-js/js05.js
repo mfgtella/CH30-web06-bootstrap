@@ -145,3 +145,79 @@ const occupation = person.occupation ||  "Software Enginner"; // Software Enginn
 console.log(`Ocupación: ${ occupation }`); // Software Enginner
 
 
+//---------- comparacion estricta -----------------------
+/*
+=== estrictamente igual, se debe comparar el valor y el tipo de dato
+!== estrictamente diferente, debe de ser diferente valor y tipo
+
+*/
+
+console.log("23"=== 23);
+console.log("true"=== true);
+console.log("true"== true);
+console.log("45"!== 45);
+
+
+//-------------- operador de desestructuracion ----------------
+/*
+es una expresion en JS que hace posible extraer datos de
+arreglo u objetos y nos ayuda a realizar asignaciones mas complejas
+*/
+
+let dataA = 10;
+let dataB = 20;
+console.log(`a: ${dataA}, b: ${dataB}`);
+
+/* let temp = dataA;
+dataA= dataB;
+dataB= temp; */
+
+[dataA, dataB] = [dataB, dataA]
+console.log(`a: ${dataA}, b: ${dataB}`);
+
+const car ={
+    model : "Vento",
+    year: 2023,
+    brand: "VW",
+    color: "red",
+    price: 320_000,
+    additionalInfo:{
+        bluetooth : true,
+        cruiseControl : true,
+        gps: false,
+}
+}
+/* console.log(`Modelo: ${car.model}`);
+console.log(`Año: ${car.year}`);
+ */
+/* const carModel = car.model;
+const carYear = car.year; */
+
+
+
+const {year,model: carModel } = car;
+console.log(`Modelo: ${carModel},Año: ${year}`);
+
+console.log(`Tiene bluetooth: ${car.additionalInfo.bluetooth ? "si": "no"}`);
+
+console.log("========================================")
+
+// ------------------  ejercicio ------------------------
+/*
+   Hacer una función que realice la división de 2 números
+   y entregue (return) en entero el cociente y residuo.
+
+   Llamar a la función y mostrar en la consola el resultado.
+
+
+*/
+
+const aA = 9;
+const bB= 4;
+function div(aA, bB) {
+    let cociente = parseInt(aA / bB);
+    let residuo = aA%bB;   
+    return{cociente,residuo};
+}
+console.log(`Division: ${div(aA,bB).cociente} Residuo: ${div(aA,bB).residuo}`);
+
